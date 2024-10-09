@@ -119,3 +119,90 @@ with open('templates/footer.html', 'r') as f:
 
 st.markdown(footer_html, unsafe_allow_html=True)
 
+import streamlit as st
+import os
+
+# Load custom CSS
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Load the CSS file
+css_file_path = os.path.join("static", "css", "styles.css")
+load_css(css_file_path)
+
+# Example content
+st.title("📊 Advanced Reporting & Dashboards")
+
+# Add your main app code below...
+
+
+import logging
+import os
+import streamlit as st
+
+# Set up logging configuration
+log_file_path = os.path.join("logs", "app_log.log")
+logging.basicConfig(
+    filename=log_file_path,
+    level=logging.DEBUG,  # Set the log level
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# Log a message when the app starts
+logging.info("Streamlit app started.")
+
+# Set page configuration
+st.set_page_config(
+    page_title="Advanced Reporting & Dashboards",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Title and description
+st.title("📊 Advanced Reporting & Dashboards")
+st.write("Gain insights into your inventory and supply chain performance by uploading your data.")
+
+# Sidebar header
+st.sidebar.header("File Upload Section")
+
+# File upload logic
+uploaded_file = st.sidebar.file_uploader("Upload your CSV file", type=["csv"])
+
+if uploaded_file is not None:
+    try:
+        # Process the uploaded file
+        save_path = os.path.join("uploads", uploaded_file.name)
+        with open(save_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        st.sidebar.success(f"File successfully saved at: {save_path}")
+        logging.info(f"File uploaded and saved: {save_path}")
+
+        # Read the uploaded CSV file
+        df = pd.read_csv(save_path)
+
+        # Displaying the data
+        st.subheader("Uploaded Data Preview")
+        st.write("Here is a preview of your inventory data:")
+        st.dataframe(df)
+
+        # Log successful data read
+        logging.info("Uploaded data read successfully.")
+
+    except Exception as e:
+        st.error("An error occurred while processing the file.")
+        logging.error(f"Error processing file: {str(e)}")
+
+else:
+    st.sidebar.info("Please upload a CSV file to get started.")
+    logging.info("Awaiting file upload...")
+
+# Footer
+st.markdown("""<hr>
+    <small>Developed by Your Name. Powered by Streamlit.</small>
+    """, unsafe_allow_html=True)
+
+# Log when the app ends (optional)
+logging.info("Streamlit app ended.")
+
