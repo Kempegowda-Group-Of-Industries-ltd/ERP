@@ -6,6 +6,11 @@ pandas     # For data manipulation and analysis
 numpy      # For numerical operations
 requests # For making HTTP requests (for API integrations)
 matplotlib
+streamlit
+pandas
+matplotlib
+seaborn
+
 # Additional packages for ERP and eCommerce integrations
 # Replace these with the actual packages you plan to use
 # For example, you might need specific SDKs or APIs for integration
