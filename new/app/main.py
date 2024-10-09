@@ -111,3 +111,11 @@ with open('templates/header.html', 'r') as f:
     header_html = f.read()
 
 st.markdown(header_html, unsafe_allow_html=True)
+
+
+# Load footer from footer.html
+with open('templates/footer.html', 'r') as f:
+    footer_html = f.read()
+
+st.markdown(footer_html, unsafe_allow_html=True)
+
