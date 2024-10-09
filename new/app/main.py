@@ -105,3 +105,9 @@ else:
 st.markdown("""<hr>
     <small>Developed by Your Name. Powered by Streamlit.</small>
     """, unsafe_allow_html=True)
+
+# Load header from header.html
+with open('templates/header.html', 'r') as f:
+    header_html = f.read()
+
+st.markdown(header_html, unsafe_allow_html=True)
