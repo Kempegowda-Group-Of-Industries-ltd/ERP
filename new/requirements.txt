@@ -1,0 +1,25 @@
+# Streamlit and related packages
+streamlit  # Check for the latest version
+plotly    # For interactive visualizations
+pandas     # For data manipulation and analysis
+numpy      # For numerical operations
+requests   # For making HTTP requests (for API integrations)
+
+# Additional packages for ERP and eCommerce integrations
+# Replace these with the actual packages you plan to use
+# For example, you might need specific SDKs or APIs for integration
+# Uncomment and edit as necessary
+# some-erp-sdk==version
+# some-ecommerce-sdk==version
+
+# For logging (included in the Python standard library, no need to add)
+# logging is part of Python, no install needed
+
+# If you need to work with JSON or other file formats
+# jsonschema # For validating JSON data
+
+# Optional: If you're planning to deploy this app
+# gunicorn    # For serving the app in production
+# streamlit-logger # For better logging in Streamlit apps
+
+# If using any other specific libraries for your project, add them here
