@@ -1,0 +1,62 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+
+# Logs
+logs/
+*.log
+
+# Uploads
+uploads/
+
+# Static files
+static/images/
+static/css/
+
+# Configuration files
+*.json
+
+# Jupyter Notebook files
+*.ipynb_checkpoints
+
+# IDE settings
+.vscode/
+.idea/
+
+# Coverage reports
+.coverage
+*.cover
+*.py,cover
+.coverage.*
+
+# Distribution files
+dist/
+build/
+*.egg-info/
+
+# Python egg files
+*.egg
+
+# C extensions
+*.so
+
+# Other files to ignore
+*.DS_Store
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.out
+
+# Ignore requirements files if they are generated
+requirements.txt
+
+# Streamlit specific files
+*.streamlit
