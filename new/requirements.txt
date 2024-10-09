@@ -1,6 +1,7 @@
 # Streamlit and related packages
 streamlit  # Check for the latest version
 plotly    # For interactive visualizations
+plotly
 pandas     # For data manipulation and analysis
 numpy      # For numerical operations
 requests   # For making HTTP requests (for API integrations)
